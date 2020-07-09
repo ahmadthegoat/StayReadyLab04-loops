@@ -1,5 +1,7 @@
 package com.codedifferently.stayready.lab04;
 
+import java.util.Random;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -34,19 +36,26 @@ public class NumbersTest {
     @Test
     public void squaresTest(){
         //: Given
+        Numbers numbers = new Numbers();
+        String expected = "squares\n1\n4\n9\n16\n25\n36\n49\n64\n81\n100";
 
         //: When
-
+        String actual = numbers.squares();
         //: Then
-    }
+        Assert.assertEquals(expected, actual);
+    }   
 
     @Test
     public void random4Test(){
         //: Given
-
+        Numbers numbers = new Numbers();
+        Random ran = new Random();
+        int nxt = ran.nextInt(10);
+        String expected = Integer.toString(nxt) + "\n" + Integer.toString(nxt) + "\n" + Integer.toString(nxt) + "\n" + Integer.toString(nxt);
         //: When
-
+        String actual = numbers.random4();
         //: Then
+        Assert.assertEquals(expected,actual);
     }
 
     @Test
